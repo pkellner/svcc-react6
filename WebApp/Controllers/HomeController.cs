@@ -15,6 +15,11 @@ namespace WebApp.Controllers
             return View();
         }
 
+        public IActionResult ImageResize()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             ViewData["RequestId"] = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
@@ -26,7 +31,6 @@ namespace WebApp.Controllers
 
             ViewData["ResultFromNode"] = await nodeServices.InvokeAsync<string>("NodeSrc/myNodeModule.js");
             return View(viewName: "About");
-
         }
     }
 }
